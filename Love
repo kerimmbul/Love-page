@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sana Özel 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #ffd1dc, #f8b5c1, #f3a0b2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 28px;
+  padding: 40px 30px;
+  max-width: 340px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+  animation: fadeUp 1.4s ease;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  color: #8b1e3f;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #4b2c36;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.heart {
+  font-size: 70px;
+  margin: 15px 0;
+  animation: heartbeat 1.6s infinite;
+}
+
+.signature {
+  margin-top: 22px;
+  font-size: 13px;
+  color: #6a3d4c;
+  opacity: 0.8;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.25); }
+  60% { transform: scale(1); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+  <div class="glass">
+    <h1>Sana Küçük Bir Hatıra</h1>
+
+    <div class="heart">💗</div>
+
+    <p>
+      Bazı insanlar vardır,<br>
+      adı geçince kalp hızlanır.<br><br>
+      Bu site küçük olabilir<br>
+      ama hissettirdikleri çok büyük.
+    </p>
+
+    <div class="signature">
+      — Seni düşünen biri
+    </div>
+  </div>
+</body>
+</html>
