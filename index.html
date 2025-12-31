@@ -1,9 +1,9 @@
-
+<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sana Bir Şey Söylemem Lazım 💖</title>
+<title>Sana Kalbim Var ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
@@ -12,7 +12,9 @@ body {
   margin: 0;
   height: 100vh;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ffb6c1, #ffdde1);
+  background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("IMG_2194.jpeg") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,11 +22,11 @@ body {
 }
 
 .card {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.92);
   border-radius: 30px;
   padding: 35px 28px;
   max-width: 340px;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.25);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.35);
   animation: fadeIn 1.5s ease;
 }
 
@@ -35,16 +37,28 @@ h1 {
 }
 
 p {
-  color: #444;
+  color: #333;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.8;
   margin-top: 15px;
 }
 
 .heart {
-  font-size: 65px;
+  font-size: 70px;
   margin: 15px 0;
-  animation: beat 1.5s infinite;
+  animation: beat 1.6s infinite;
+}
+
+button {
+  margin-top: 22px;
+  padding: 12px 26px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg,#ff4d6d,#ff758f);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
 }
 
 .signature {
@@ -60,7 +74,7 @@ p {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(25px); }
+  from { opacity: 0; transform: translateY(35px); }
   to { opacity: 1; transform: translateY(0); }
 }
 </style>
@@ -68,30 +82,71 @@ p {
 
 <body>
 
-<audio autoplay loop>
-  <source src="ask.mp3" type="audio/mpeg">
+<!-- MÜZİK -->
+<audio id="music" autoplay loop>
+  <source src="sor.mp3" type="audio/mpeg">
 </audio>
 
-<div class="card">
-  <h1>Sana Kalbimden Gelen Bir Şey</h1>
+<!-- 1. EKRAN -->
+<div class="card" id="first">
+  <h1>Sana Küçük Bir Sırrım Var</h1>
 
   <div class="heart">❤️</div>
 
   <p>
-    Bunu okurken belki gülümsüyorsun,<br>
-    belki de kalbin biraz hızlandı.<br><br>
-
-    Çünkü sana şunu söylemem lazım:<br><br>
-
-    <b>Ben seni seviyorum.</b><br>
-    Hem de düşündüğünden daha çok.
+    Bazı hisler anlatılmaz…<br>
+    Ama sen olunca kelimeler yetmiyor.<br><br>
+    Kalbim, adını ezberledi.<br>
+    Ve başka bir şey öğrenmek istemiyor.
   </p>
 
-  <div class="signature">
-    — Kerim
-  </div>
+  <button onclick="showLove()">Devam et 💗</button>
+
+  <div class="signature">— Kerim</div>
 </div>
+
+<!-- 2. EKRAN -->
+<div class="card" id="second" style="display:none;">
+  <h1>💞</h1>
+
+  <p>
+    Eğer şu an buradaysan…<br>
+    Bu sadece bir site değil.<br><br>
+    Bu, sana açılmış bir kalp.<br><br>
+    <b>Seni seviyorum.</b>
+  </p>
+
+  <button onclick="finalLove()">Ben de 💕</button>
+</div>
+
+<!-- 3. EKRAN -->
+<div class="card" id="third" style="display:none;">
+  <h1>❤️‍🔥</h1>
+
+  <p>
+    O zaman tamam…<br><br>
+    Bundan sonra:<br>
+    Gülüşün sebebim,<br>
+    Elin yolum olsun.<br><br>
+    Hep yan yana.
+  </p>
+
+  <div class="heart">💖</div>
+</div>
+
+<script>
+function showLove() {
+  document.getElementById("first").style.display = "none";
+  document.getElementById("second").style.display = "block";
+}
+
+function finalLove() {
+  document.getElementById("second").style.display = "none";
+  document.getElementById("third").style.display = "block";
+}
+</script>
 
 </body>
 </html>
+
 
