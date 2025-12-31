@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sana Bir Kalbim Var ❤️</title>
+<title>Kalbim Sana 🎀</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
@@ -13,26 +13,29 @@ body {
   height: 100vh;
   font-family: 'Poppins', sans-serif;
   background:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
     url("IMG_2194.jpeg") center/cover no-repeat;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
+/* KART */
 .card {
   background: rgba(255,255,255,0.95);
   border-radius: 30px;
   padding: 36px 28px;
   max-width: 340px;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.4);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.35);
   animation: fadeIn 1.6s ease;
+  z-index: 2;
 }
 
 h1 {
   font-family: 'Playfair Display', serif;
-  color: #b03060;
+  color: #c9184a;
   font-size: 24px;
 }
 
@@ -67,6 +70,20 @@ button {
   color: #777;
 }
 
+/* DÜŞEN KALPLER */
+.fall {
+  position: absolute;
+  top: -50px;
+  font-size: 26px;
+  animation: fall linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-50px); }
+  100% { transform: translateY(110vh); }
+}
+
 @keyframes beat {
   0% { transform: scale(1); }
   40% { transform: scale(1.25); }
@@ -89,15 +106,14 @@ button {
 
 <!-- 1. EKRAN -->
 <div class="card" id="first">
-  <h1>Sana Küçük Bir Şey Söyleyeceğim</h1>
+  <h1>Hello Kitty bile biliyor 🎀</h1>
 
   <div class="heart">❤️</div>
 
   <p>
-    Bazı insanlar vardır…<br>
-    Geldiği an her şeyin anlamı değişir.<br><br>
-    Sen geldiğinden beri<br>
-    kalbim hep aynı şeyi söylüyor.
+    Bazı kalpler vardır…<br>
+    Sadece bir kişiye ait olur.<br><br>
+    Benimki sana ait 🐱🎀
   </p>
 
   <button onclick="startLove()">Dinle 💗</button>
@@ -111,10 +127,9 @@ button {
 
   <p>
     Bu bir mesaj değil…<br>
-    Bu sana açılmış bir kalp.<br><br>
-    Seni düşündüğüm her an,<br>
-    biraz daha sana aitim.<br><br>
-    <b>Seni seviyorum.</b>
+    Bu sana düşen bir kalp.<br><br>
+    Seni sevmek<br>
+    en güzel alışkanlığım oldu 🎀
   </p>
 
   <button onclick="finalStep()">Ben de 💕</button>
@@ -122,13 +137,12 @@ button {
 
 <!-- 3. EKRAN -->
 <div class="card" id="third" style="display:none;">
-  <h1>❤️‍🔥</h1>
+  <h1>🐱🎀</h1>
 
   <p>
     O zaman tamam…<br><br>
-    Bundan sonra:<br>
-    Gülüşün sebebim,<br>
-    Elin yolum olsun.<br><br>
+    Hello Kitty şahidim olsun,<br>
+    ben seni çok seviyorum ❤️<br><br>
     Hep yan yana.
   </p>
 
@@ -136,6 +150,23 @@ button {
 </div>
 
 <script>
+const emojis = ["❤️","💖","💗","💞","🐱","🎀"];
+
+function createFall() {
+  const el = document.createElement("div");
+  el.className = "fall";
+  el.style.left = Math.random() * 100 + "vw";
+  el.style.animationDuration = (3 + Math.random() * 5) + "s";
+  el.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+  document.body.appendChild(el);
+
+  setTimeout(() => {
+    el.remove();
+  }, 8000);
+}
+
+setInterval(createFall, 300);
+
 function startLove() {
   document.getElementById("music").play();
   document.getElementById("first").style.display = "none";
